@@ -1,8 +1,22 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
 // This Middleware does not protect any routes by default.
 // See https://clerk.com/docs/references/nextjs/clerk-middleware for more information about configuring your Middleware
-export default clerkMiddleware();
+export default clerkMiddleware(
+  async (auth, req) => {
+    return NextResponse.next()
+  },
+  {
+    organizationSyncOptions: {
+      organizationPatterns: [
+        '/:slug', // Match the org slug
+        '/:slug/(.*)', // Wildcard match for optional trailing path segments
+      ],
+    },
+    debug: true,
+  },
+)
 
 export const config = {
   matcher: [
