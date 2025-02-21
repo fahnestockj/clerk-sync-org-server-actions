@@ -1,6 +1,6 @@
 ## Minimal Reproduction For Clerk Support Ticket
 
-I've been running into errors thrown by Clerk when calling auth() with OrganizationSync turned on in middleware. It seems like sentry plays a role aswell
+I've been running into errors thrown by Clerk when auth() is called with Sentry enabled.
 
 When reproducing this issue I've realised that the package manager plays a role so **pnpm must be used**.
 
@@ -11,7 +11,7 @@ node: v20.10.0
 pnpm: 8.6.12
 ```
 
-To set up Clerk and Sentry add the following variables to a .env.local in the root of the project
+To set up Clerk and Sentry add the following variables to .env.local in the root of the project
 
 ```
 # Clerk vars
