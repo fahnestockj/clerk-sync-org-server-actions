@@ -31,7 +31,7 @@ Then run build commands
 - `pnpm build`
 - `pnpm start`
 
-Upon opening the site the auth() function call in the root layout (from prebuilt clerk components <SignedIn/> and <SignedOut/>) will throw the following Error
+Upon opening the site the auth() function call in the root layout (from prebuilt clerk components \<SignedIn/> and \<SignedOut/>) will throw the following Error
 
 ```
  ⨯ Error: Clerk: Unable to decrypt request data, this usually means the encryption key is invalid. Ensure the encryption key is properly set. For more information, see: https://clerk.com/docs/references/nextjs/clerk-middleware#dynamic-keys. (code=encryption_key_invalid)
